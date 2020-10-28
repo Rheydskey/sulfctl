@@ -35,6 +35,7 @@ pub fn enable_srv (service: String) {
             std::process::exit(1);
         }
     }
+    println!("");
 }
 pub fn disable_srv (service: String) {
     match Command::new("rc-update").args(&["del", &service, "default"]).spawn() {
@@ -46,4 +47,5 @@ pub fn disable_srv (service: String) {
             std::process::exit(1);
         }
     }
+    println!("");
 }

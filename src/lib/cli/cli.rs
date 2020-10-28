@@ -2,14 +2,16 @@ use structopt::StructOpt;
 
 #[derive(StructOpt, Debug)]
 #[structopt(
-    name = "Sulfur -",
+    name = "SulfCtl",
     version = "0.0.1",
-    author = "By Rheydskey and Sulfurium OS team",
-    about = "Package Manager of Sulfurium OS"
+    author = "SulfuriumOs team",
+    about = "Control utility of Sulfurium OS"
 )]
 pub enum Cli {
     Service {
         #[structopt()]
         action: String,
+        #[structopt()]
+        packages: Vec<String>,
     }
 }

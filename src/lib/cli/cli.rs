@@ -1,5 +1,4 @@
 use structopt::StructOpt;
-
 #[derive(StructOpt, Debug)]
 #[structopt(
     name = "SulfCtl",
@@ -8,10 +7,11 @@ use structopt::StructOpt;
     about = "Control utility of Sulfurium OS"
 )]
 pub enum Cli {
+    /// Services management
     Service {
         #[structopt()]
         action: String,
         #[structopt()]
-        packages: Vec<String>,
+        service: String,
     }
 }

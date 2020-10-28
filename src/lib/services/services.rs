@@ -5,15 +5,15 @@ pub fn start_srv (service: String) {
         .spawn()
         .unwrap()
         .stdout;
-        println!("{:?}", optput.unwrap())
+        println!("{:?}", optput);
 }
 pub fn stop_srv (service: String) {
     let optput = Command::new("rc-service")
-        .args(&[&service, "start"])
+        .args(&[&service, "stop"])
         .spawn()
         .unwrap()
         .stdout;
-        println!("{:?}", optput.unwrap())
+        println!("{:?}", optput);
 }
 pub fn enable_srv (service: String) {
     let optput = Command::new("rc-update")
@@ -21,7 +21,7 @@ pub fn enable_srv (service: String) {
         .spawn()
         .unwrap()
         .stdout;
-        println!("{:?}", optput.unwrap())
+        println!("{:?}", optput);
 }
 pub fn disable_srv (service: String) {
     let optput = Command::new("rc-update")
@@ -29,5 +29,5 @@ pub fn disable_srv (service: String) {
         .spawn()
         .unwrap()
         .stdout;
-        println!("{:?}", optput.unwrap())
+        println!("{:?}", optput);
 }

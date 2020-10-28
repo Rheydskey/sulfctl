@@ -10,7 +10,7 @@ pub fn start_srv (service: String) {
         }
     }
     std::thread::sleep(std::time::Duration::from_secs(1));
-    println!("\n");
+    println!("");
 }
 pub fn stop_srv (service: String) {
     match Command::new("rc-service").args(&[&service, "stop"]).spawn() {
@@ -23,7 +23,7 @@ pub fn stop_srv (service: String) {
         }
     }
     std::thread::sleep(std::time::Duration::from_secs(1));
-    println!("\n");
+    println!("");
 }
 pub fn enable_srv (service: String) {
     match Command::new("rc-update").args(&["add", &service, "default"]).spawn() {

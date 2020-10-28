@@ -1,6 +1,6 @@
 use std::process::Command;
 pub fn start_srv (service: String) {
-    match Command::new("rc-service").args(&[&service, "start"]).spawn().unwrap() {
+    match Command::new("rc-service").args(&[&service, "start"]).spawn() {
         Ok(out) => {
             println!("");
         }
@@ -11,7 +11,7 @@ pub fn start_srv (service: String) {
     }
 }
 pub fn stop_srv (service: String) {
-    match Command::new("rc-service").args(&[&service, "stop"]).spawn().unwrap() {
+    match Command::new("rc-service").args(&[&service, "stop"]).spawn() {
         Ok(out) => {
             println!("");
         }
@@ -22,7 +22,7 @@ pub fn stop_srv (service: String) {
     }
 }
 pub fn enable_srv (service: String) {
-    match Command::new("rc-update").args(&["add", &service, "default"]).spawn().unwrap() {
+    match Command::new("rc-update").args(&["add", &service, "default"]).spawn() {
         Ok(out) => {
             println!("");
         }
@@ -33,7 +33,7 @@ pub fn enable_srv (service: String) {
     }
 }
 pub fn disable_srv (service: String) {
-    match Command::new("rc-update").args(&["del", &service, "default"]).spawn().unwrap() {
+    match Command::new("rc-update").args(&["del", &service, "default"]).spawn() {
         Ok(out) => {
             println!("");
         }

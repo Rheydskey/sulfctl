@@ -9,7 +9,7 @@ pub fn start_srv (service: String) {
             std::process::exit(1);
         }
     }
-    std::thread::sleep(std::time::Duration::from_secs(1));
+    std::thread::sleep(std::time::Duration::from_secs(2));
     println!("");
 }
 pub fn stop_srv (service: String) {
@@ -22,7 +22,7 @@ pub fn stop_srv (service: String) {
             std::process::exit(1);
         }
     }
-    std::thread::sleep(std::time::Duration::from_secs(1));
+    std::thread::sleep(std::time::Duration::from_secs(2));
     println!("");
 }
 pub fn enable_srv (service: String) {
